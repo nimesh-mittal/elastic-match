@@ -4,49 +4,52 @@
 
 ## http://elasticmatch.com
 
-#### elastic-match is a RESTful matching engine built for the cloud. Features include:
+#### elastic-match is a generic matching engine. Features include:
 
-* Flexible Matching Engine.
-  * Matching engine can be configure using Matching rules
-  * Support multi-level matching rules
+* Flexible Matching rules
+  * Support multi-level matching rules each with priority
   * Support 1-1 and M-M matching
+  * Support match with threshold
   * Ability to configure existing famous matching algorithms
   * Ability to configure user-define matching algorithms
 
-* Multi Tenant
-** Support for more than one matching
-** Support for more than one type per index.
-** Index level configuration (number of shards, index storage, ...).
-* Various set of APIs
-** HTTP RESTful API
-** Native Java API.
-** All APIs perform automatic node operation rerouting.
 * Document oriented
-** No need for upfront schema definition.
-** Schema can be defined per type for customization of the indexing process.
-* Reliable, Asynchronous Write Behind for long term persistency.
-* (Near) Real Time Search.
-* Built on top of Lucene
-** Each shard is a fully functional Lucene index
-** All the power of Lucene easily exposed through simple configuration / plugins.
-* Per operation consistency
-** Single document level operations are atomic, consistent, isolated and durable.
+  * Schema less records
+  * Ability to index any JSON records
+
+* Multi Tenant
+  * Support multiple match config per instance
+  * Data and matches are isolated per match config
+
+* Restful
+  * Rest API to create match config
+  * Rest API for records indexing
+  * Rest API to check system health
+
+* Reliable and Dynamic
+  * Real time match
+  * Indexing and Matching can run in parellel
+
+* Transparant
+  * Angular JS UI to see matching status and system health
+  * UI to configure matching rules 
+
 * Open Source under the Apache License, version 2 ("ALv2")
 
 ## Getting Started
 
-First of all, DON'T PANIC. It will take 5 minutes to get the gist of what Elasticsearch is all about.
+Elastic match is design to keep things simple yet powerful. It will take less than 5 mins to do complete setup on your laptop so that you can do your first match right away.
 
 ### Requirements
 
-You need to have a recent version of Java installed. See the "Setup":http://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html#jvm-version page for more information.
+1. You need to have Java 8 or adove installed. 
+2. Any version of Mongodb
 
 ### Installation
 
-* "Download":https://www.elastic.co/downloads/elasticsearch and unzip the Elasticsearch official distribution.
-* Run @bin/elasticsearch@ on unix, or @bin\elasticsearch.bat@ on windows.
-* Run @curl -X GET http://localhost:9200/@.
-* Start more servers ...
+* Download tar from https://www.elasticmatch.com/downloads and unzip the Elasticmatch official distribution.
+* Run @bin/start.sh@ on unix, or @bin\start.bat@ on windows.
+* Open browser and type http://localhost:12273/admin-ui/src/app/index.html
 
 ### Indexing
 
