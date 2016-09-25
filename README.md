@@ -2,7 +2,7 @@
 
 ## A Generic Restful Match Engine
 
-### "http://elasticmatch.com":http://elasticmatch.com
+link:"http://elasticmatch.com":http://elasticmatch.com
 
 #### elastic-match is a distributed RESTful matching engine built for the cloud. Features include:
 
