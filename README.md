@@ -10,7 +10,7 @@
   * Support multi-level matching rules each with priority
   * Support 1-1 and M-M matching
   * Support match with threshold
-  * Ability to configure existing famous matching algorithms
+  * Ability to configure existing famous matching algorithms for each matching rule
   * Ability to configure user-define matching algorithms
 
 * Document oriented
@@ -27,7 +27,7 @@
   * Rest API to check system health
 
 * Reliable and Dynamic
-  * Real time match
+  * Real time matching
   * Indexing and Matching can run in parellel
 
 * Transparant
@@ -42,8 +42,8 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 
 ### Requirements
 
-1. You need to have Java 8 or adove installed. 
-2. Any version of Mongodb
+1. Java 8 or adove 
+2. Mongodb 3.2 or above
 
 ### Installation
 
