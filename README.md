@@ -12,6 +12,7 @@
 ** Support 1-1 and M-M matching
 ** Ability to configure existing famous matching algorithms
 ** Ability to configure user-define matching algorithms
+
 * Multi Tenant
 ** Support for more than one matching
 ** Support for more than one type per index.
