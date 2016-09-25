@@ -51,6 +51,9 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 * Run ```bin/start.sh``` on unix, or ```bin\start.bat``` on windows.
 * Open browser and type ```http://localhost:12273/admin-ui/src/app/index.html```
 
+### UI
+Link: elastic-match/Screenshot from 2016-09-25 16:09:44.png
+
 ### Indexing
 
 Let's try and index some twitter like information. First, let's create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
