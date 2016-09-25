@@ -1,10 +1,10 @@
-h1. elastic-match
+# elastic-match
 
-h2. A Generic Restful Match Engine
+## A Generic Restful Match Engine
 
-h3. "http://elasticmatch.com":http://elasticmatch.com
+### "http://elasticmatch.com":http://elasticmatch.com
 
-elastic-match is a distributed RESTful matching engine built for the cloud. Features include:
+#### elastic-match is a distributed RESTful matching engine built for the cloud. Features include:
 
 * Distributed and Highly Available Matching Engine.
 ** Each index is fully sharded with a configurable number of shards.
