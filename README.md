@@ -30,22 +30,22 @@
 ** Single document level operations are atomic, consistent, isolated and durable.
 * Open Source under the Apache License, version 2 ("ALv2")
 
-h2. Getting Started
+## Getting Started
 
 First of all, DON'T PANIC. It will take 5 minutes to get the gist of what Elasticsearch is all about.
 
-h3. Requirements
+### Requirements
 
 You need to have a recent version of Java installed. See the "Setup":http://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html#jvm-version page for more information.
 
-h3. Installation
+### Installation
 
 * "Download":https://www.elastic.co/downloads/elasticsearch and unzip the Elasticsearch official distribution.
 * Run @bin/elasticsearch@ on unix, or @bin\elasticsearch.bat@ on windows.
 * Run @curl -X GET http://localhost:9200/@.
 * Start more servers ...
 
-h3. Indexing
+### Indexing
 
 Let's try and index some twitter like information. First, let's create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
 
@@ -75,7 +75,7 @@ curl -XGET 'http://localhost:9200/twitter/tweet/1?pretty=true'
 curl -XGET 'http://localhost:9200/twitter/tweet/2?pretty=true'
 </pre>
 
-h3. Searching
+### Matching
 
 Mmm search..., shouldn't it be elastic?
 Let's find all the tweets that @kimchy@ posted:
@@ -121,7 +121,7 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
 
 There are many more options to perform search, after all, it's a search product no? All the familiar Lucene queries are available through the JSON query language, or through the query parser.
 
-h3. Multi Tenant - Indices and Types
+### Multi Tenant - Indices and Types
 
 Maan, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amounts of data.
 
@@ -186,7 +186,7 @@ curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
 
 {One liner teaser}: And the cool part about that? You can easily search on multiple twitter users (indices), with different boost levels per user (index), making social search so much simpler (results from my friends rank higher than results from friends of my friends).
 
-h3. Distributed, Highly Available
+### Distributed, Highly Available
 
 Let's face it, things will fail....
 
@@ -194,11 +194,11 @@ Elasticsearch is a highly available and distributed search engine. Each index is
 
 In order to play with the distributed nature of Elasticsearch, simply bring more nodes up and shut down nodes. The system will continue to serve requests (make sure you use the correct http port) with the latest data indexed.
 
-h3. Where to go from here?
+### Where to go from here?
 
 We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elastic.co":http://www.elastic.co/products/elasticsearch website. General questions can be asked on the "Elastic Discourse forum":https://discuss.elastic.co or on IRC on Freenode at "#elasticsearch":https://webchat.freenode.net/#elasticsearch. The Elasticsearch GitHub repository is reserved for bug reports and feature requests only.
 
-h3. Building from Source
+### Building from Source
 
 Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.13 should do.
 
@@ -209,7 +209,7 @@ The distribution for each project will be created under the @build/distributions
 See the "TESTING":TESTING.asciidoc file for more information about
 running the Elasticsearch test suite.
 
-h3. Upgrading from Elasticsearch 1.x?
+### Upgrading from elastic-match 1.x?
 
 In order to ensure a smooth upgrade process from earlier versions of
 Elasticsearch (1.x), it is required to perform a full cluster restart. Please
@@ -217,12 +217,12 @@ see the "setup reference":
 https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
 for more details on the upgrade process.
 
-h1. License
+# License
 
 <pre>
 This software is licensed under the Apache License, version 2 ("ALv2"), quoted below.
 
-Copyright 2009-2016 Elasticsearch <https://www.elastic.co>
+Copyright 2009-2016 Elasticmatch <https://www.elasticmatch.com>
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
 use this file except in compliance with the License. You may obtain a copy of
