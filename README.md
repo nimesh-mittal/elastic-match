@@ -7,11 +7,11 @@
 #### elastic-match is a RESTful matching engine built for the cloud. Features include:
 
 * Flexible Matching Engine.
-** Matching engine can be configure using Matching rules
-** Support multi-level matching rules
-** Support 1-1 and M-M matching
-** Ability to configure existing famous matching algorithms
-** Ability to configure user-define matching algorithms
+  * Matching engine can be configure using Matching rules
+  * Support multi-level matching rules
+  * Support 1-1 and M-M matching
+  * Ability to configure existing famous matching algorithms
+  * Ability to configure user-define matching algorithms
 
 * Multi Tenant
 ** Support for more than one matching
