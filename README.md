@@ -58,11 +58,11 @@ Link: https://github.com/nimesh-mittal/elastic-match/blob/master/Screenshot%20fr
 
 Let's insert some records for matching. First, let's create a match config.
 
-<todo>
+:soon:
 
 ### Matching
 
-<todo>
+:soon:
 
 ### Multi Tenant
 
@@ -76,7 +76,7 @@ index (twitter user), for example:
 
 Let's face it, things will fail....
 
-<todo>
+:soon:
 
 ### Where to go from here?
 
