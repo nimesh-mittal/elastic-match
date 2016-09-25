@@ -4,14 +4,16 @@
 
 ## http://elasticmatch.com
 
-#### elastic-match is a distributed RESTful matching engine built for the cloud. Features include:
+#### elastic-match is a RESTful matching engine built for the cloud. Features include:
 
-* Distributed and Highly Available Matching Engine.
-** Each index is fully sharded with a configurable number of shards.
-** Each shard can have one or more replicas.
-** Read / Search operations performed on any of the replica shards.
-* Multi Tenant with Multi Types.
-** Support for more than one index.
+* Flexible Matching Engine.
+** Matching engine can be configure using Matching rules
+** Support multi-level matching rules
+** Support 1-1 and M-M matching
+** Ability to configure existing famous matching algorithms
+** Ability to configure user-define matching algorithms
+* Multi Tenant
+** Support for more than one matching
 ** Support for more than one type per index.
 ** Index level configuration (number of shards, index storage, ...).
 * Various set of APIs
