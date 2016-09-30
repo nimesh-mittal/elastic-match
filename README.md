@@ -68,11 +68,7 @@ Inorder to match records it is important to create correct match configuration. 
 
 ### Multi Tenant
 
-<pre>
-curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -d '{ "name" : "Shay Banon" }'
-</pre>
-Search (and similar operations) are multi index aware. This means that we can easily search on more than one
-index (twitter user), for example:
+Create multiple match config like above. Each match config runs independently and maintains its own state.
 
 ### System health
 
