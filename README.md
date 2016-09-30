@@ -74,7 +74,9 @@ index (twitter user), for example:
 
 ### System health
 
-Let's face it, things will fail....
+Let's face it, things will fail.... It is immportant to have tools that monitor system health and provide the summary of whats happening inside a cluster.
+
+Elasticmatch provides a UI to monitor status of system processes. It also provides summary of matching engine state like number of records matched group by matching rule and count.
 
 [![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985943/268c4288-8718-11e6-8a61-ca942b28c77a.png)](http://elasticmatch.com/)
 
