@@ -62,7 +62,9 @@ Let's insert some records for matching. First, let's create a match config.
 
 ### Matching
 
-:soon:
+Inorder to match records it is important to create correct match configuration. Elasticmatch provides a simple interface to create complex matching rules. It also helps in setting up other elasticmatch configurations like file watcher, mongodb settings using ui.
+
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18986098/f30a76a4-8718-11e6-8a90-96ad3dda0a77.png)](http://elasticmatch.com/)
 
 ### Multi Tenant
 
