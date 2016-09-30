@@ -52,7 +52,7 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 * Open browser and type ```http://localhost:12273/admin-ui/src/app/index.html```
 
 ### UI
-[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985680/b2f22898-8716-11e6-9ac5-944173ba8366.png)](http://elasticmatch.com/)
 
 ### Indexing
 
