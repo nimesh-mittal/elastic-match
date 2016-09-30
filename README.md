@@ -1,5 +1,3 @@
-#elasticmatch
-
 [![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
 
 ## A Generic Restful Match Engine
@@ -54,7 +52,7 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 * Open browser and type ```http://localhost:12273/admin-ui/src/app/index.html```
 
 ### UI
-Link: https://github.com/nimesh-mittal/elastic-match/blob/master/Screenshot%20from%202016-09-25%2016:09:44.png
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
 
 ### Indexing
 
