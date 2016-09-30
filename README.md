@@ -1,4 +1,6 @@
-# elastic-match
+#elasticmatch
+
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
 
 ## A Generic Restful Match Engine
 
