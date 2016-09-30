@@ -76,7 +76,7 @@ index (twitter user), for example:
 
 Let's face it, things will fail....
 
-:soon:
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985943/268c4288-8718-11e6-8a61-ca942b28c77a.png)](http://elasticmatch.com/)
 
 ### Where to go from here?
 
