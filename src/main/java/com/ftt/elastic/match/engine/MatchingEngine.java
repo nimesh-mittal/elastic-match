@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import org.pmw.tinylog.Logger;
 
@@ -111,7 +112,7 @@ public class MatchingEngine {
             List<ARecord> matchingARecords = entry.getValue();
             List<BRecord> matchingBRecords = matchKeyBRecordMap.get(entry.getKey());
 
-            if (matchingBRecords == null) {
+            if (Objects.isNull(matchingBRecords)) {
                 matchingBRecords = new ArrayList<>();
             }
 
