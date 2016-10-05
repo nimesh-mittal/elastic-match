@@ -5,6 +5,7 @@
  */
 package com.ftt.elastic.match.startup;
 
+import com.ftt.elastic.match.utils.PropertiesRepo;
 import org.pmw.tinylog.Configurator;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.labelers.CountLabeler;
@@ -31,19 +32,19 @@ public class StartupSettings {
 
     private static void setupBatchLogConfig() {
         Configurator.defaultConfig()
-                .writer(new RollingFileWriter("/opt/dev/apps/elastic/logs/data-import.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
+                .writer(new RollingFileWriter(PropertiesRepo.get("log.path") + "/data-import.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
                 .addWriter(new ConsoleWriter())
-                .level(Level.INFO)
-                .formatPattern("{date:yyyy-MM-dd HH:mm:ss} [{thread}] {class}.{method}.{line}.{level} => {message}")
+                .level(Level.valueOf(PropertiesRepo.get("log.level")))
+                .formatPattern(PropertiesRepo.get("log.pattern"))
                 .activate();
     }
 
     private static void setupEngineLogConfig() {
         Configurator.defaultConfig()
-                .writer(new RollingFileWriter("/opt/dev/apps/elastic/logs/matching-engine.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
+                .writer(new RollingFileWriter(PropertiesRepo.get("log.path") + "/matching-engine.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
                 .addWriter(new ConsoleWriter())
-                .level(Level.INFO)
-                .formatPattern("{date:yyyy-MM-dd HH:mm:ss} [{thread}] {class}.{method}.{line}.{level} => {message}")
+                .level(Level.valueOf(PropertiesRepo.get("log.level")))
+                .formatPattern(PropertiesRepo.get("log.pattern"))
                 .activate();
     }
 }

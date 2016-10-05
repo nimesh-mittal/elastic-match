@@ -15,7 +15,7 @@ import org.pmw.tinylog.Logger;
 public class LogUtils {
 
     public static void logStart() {
-        Logger.info("========================= Start [{}] =============================", new Date());
+        Logger.info("============= Start [{}] ==============", new Date());
     }
 
     public static void logEnd() {

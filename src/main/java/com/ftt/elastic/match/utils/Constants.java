@@ -11,11 +11,13 @@ package com.ftt.elastic.match.utils;
  */
 public class Constants {
 
+    public static final String Zero = "0";
+
     public enum MatchingTypes {
         OneToOne, OneToMany, ManyToMany
     }
-    
-    public enum MatchingStatus{
+
+    public enum MatchingStatus {
         Match, UnMatch, NotMatched
     }
 
@@ -29,5 +31,10 @@ public class Constants {
         public final String Similar = "==";
         public final String NotSimilar = "!=";
         public final String SimilarCaseInsensitive = "i==";
+    }
+
+    public interface Settings {
+        public final String MATCH_BATCH_DELAY = "match.batch.delay";
+        public final String MATCH_BUCKET_MAX_SIZE = "match.bucket.max-size";
     }
 }

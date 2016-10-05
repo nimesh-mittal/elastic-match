@@ -5,6 +5,7 @@
  */
 package com.ftt.elastic.match.engine;
 
+import com.ftt.elastic.match.core.MatchConditionExecutor;
 import com.ftt.elastic.match.startup.StartupSettings;
 import com.ftt.elastic.match.beans.ARecord;
 import com.ftt.elastic.match.beans.BRecord;
@@ -17,6 +18,7 @@ import com.ftt.elastic.match.db.BRecordDAO;
 import com.ftt.elastic.match.db.MatchConfigDAO;
 import com.ftt.elastic.match.utils.Constants;
 import com.ftt.elastic.match.utils.LogUtils;
+import com.ftt.elastic.match.utils.PropertiesRepo;
 import com.ftt.elastic.match.utils.SystemHealthUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,10 +41,10 @@ public class MatchingEngine {
 
     public static void main(String[] args) throws InterruptedException {
         MatchingEngine matchingEngine = new MatchingEngine();
-        matchingEngine.execute();
+        matchingEngine.start();
     }
 
-    public void execute() throws InterruptedException {
+    public void start() throws InterruptedException {
         while (true) {
             long start = System.currentTimeMillis();
             MatchConfigDAO matchConfigDAO = new MatchConfigDAO();
@@ -68,7 +70,7 @@ public class MatchingEngine {
                 LogUtils.logEnd();
                 SystemHealthUtils.create("Running", "matching");
             }
-            Thread.sleep(10 * 1000);
+            Thread.sleep(PropertiesRepo.getInt(Constants.Settings.MATCH_BATCH_DELAY) * 1000);
         }
     }
 
@@ -80,7 +82,7 @@ public class MatchingEngine {
 
     private List<ARecord> getARecords(String key, String matchName) {
         ARecordDAO aRecordDAO = new ARecordDAO();
-        PageInfo pageInfo = new PageInfo(10000, 0);//TODO: take it from UI
+        PageInfo pageInfo = new PageInfo(PropertiesRepo.getInt(Constants.Settings.MATCH_BUCKET_MAX_SIZE), 0);
 
         Map<String, Object> searchCriteria = new HashMap<>();
         searchCriteria.put("key =", key);
@@ -93,7 +95,7 @@ public class MatchingEngine {
     private List<BRecord> getBRecords(String key, String matchName) {
         BRecordDAO bRecordDAO = new BRecordDAO();
 
-        PageInfo pageInfo = new PageInfo(10000, 0);
+        PageInfo pageInfo = new PageInfo(PropertiesRepo.getInt(Constants.Settings.MATCH_BUCKET_MAX_SIZE), 0);
 
         Map<String, Object> searchCriteria = new HashMap<>();
         searchCriteria.put("key =", key);
@@ -108,9 +110,9 @@ public class MatchingEngine {
         Map<String, List<ARecord>> matchKeyARecordMap = constructARecordMap(aRecords, matchRule);
         Map<String, List<BRecord>> matchKeyBRecordMap = constructBRecordMap(bRecords, matchRule);
 
-        for (Map.Entry<String, List<ARecord>> entry : matchKeyARecordMap.entrySet()) {
-            List<ARecord> matchingARecords = entry.getValue();
-            List<BRecord> matchingBRecords = matchKeyBRecordMap.get(entry.getKey());
+        for (String key : matchKeyARecordMap.keySet()) {
+            List<ARecord> matchingARecords = matchKeyARecordMap.get(key);
+            List<BRecord> matchingBRecords = matchKeyBRecordMap.get(key);
 
             if (Objects.isNull(matchingBRecords)) {
                 matchingBRecords = new ArrayList<>();
@@ -160,7 +162,7 @@ public class MatchingEngine {
             Iterator<BRecord> iterator = bRecords.iterator();
             while (iterator.hasNext()) {
                 BRecord bRecord = iterator.next();
-                if (MatchExecutor.match(aRecord, bRecord, matchConditions)) {
+                if (MatchConditionExecutor.match(aRecord, bRecord, matchConditions)) {
                     updateMatchInfo(aRecord, bRecord, ruleName);
                     iterator.remove();
                     break;
@@ -169,8 +171,8 @@ public class MatchingEngine {
         }
     }
 
-    private void matchManyToMany(List<ARecord> matchingARecords, List<BRecord> matchingBRecords, List<MatchCondition> conditions, String ruleName) {
-        if (MatchExecutor.matchManyToMany(matchingARecords, matchingBRecords, conditions)) {
+    private void matchManyToMany(List<ARecord> matchingARecords, List<BRecord> matchingBRecords, List<MatchCondition> matchConditions, String ruleName) {
+        if (MatchConditionExecutor.match(matchingARecords, matchingBRecords, matchConditions)) {
             updateMatchInfo(matchingARecords, matchingBRecords, ruleName);
         }
     }

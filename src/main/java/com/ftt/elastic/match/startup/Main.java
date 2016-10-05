@@ -50,7 +50,7 @@ public class Main {
             public void run() {
                 try {
                     MatchingEngine matchingEngine = new MatchingEngine();
-                    matchingEngine.execute();
+                    matchingEngine.start();
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     SystemHealthUtils.create("Failed", "matching");
