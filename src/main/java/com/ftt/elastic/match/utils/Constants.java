@@ -36,5 +36,11 @@ public class Constants {
     public interface Settings {
         public final String MATCH_BATCH_DELAY = "match.batch.delay";
         public final String MATCH_BUCKET_MAX_SIZE = "match.bucket.max-size";
+        public final String MONGODB_HOST = "mongodb.hostname";
+        public final String MONGODB_PORT = "mongodb.port";
+        public final String MONGODB_SCHEMANAME = "mongodb.schemaName";
+        public final String LOG_PATH = "log.path";
+        public final String LOG_LEVEL = "log.level";
+        public final String LOG_PATTERN = "log.pattern";
     }
 }

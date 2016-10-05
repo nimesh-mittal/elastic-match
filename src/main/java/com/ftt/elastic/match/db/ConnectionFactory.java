@@ -5,8 +5,10 @@
  */
 package com.ftt.elastic.match.db;
 
+import com.ftt.elastic.match.utils.Constants;
 import com.ftt.elastic.match.utils.PropertiesRepo;
 import com.mongodb.MongoClient;
+import java.util.Objects;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
@@ -16,14 +18,14 @@ import org.mongodb.morphia.Morphia;
  */
 public class ConnectionFactory {
 
-    private static Datastore datastore;
+    private static Datastore datastore = null;
 
     public static synchronized  Datastore getDatastore() {
-        if (datastore == null) {
+        if (Objects.isNull(datastore)) {
             Morphia morphia = new Morphia();
             morphia.mapPackage("com.ftt.elastic.match.beans");
-            MongoClient mongoClient = new MongoClient(PropertiesRepo.get("db.hostname"), PropertiesRepo.getInt("db.port"));
-            datastore = morphia.createDatastore(mongoClient, "match");
+            MongoClient mongoClient = new MongoClient(PropertiesRepo.get(Constants.Settings.MONGODB_HOST), PropertiesRepo.getInt(Constants.Settings.MONGODB_PORT));
+            datastore = morphia.createDatastore(mongoClient, PropertiesRepo.get(Constants.Settings.MONGODB_SCHEMANAME));
         }
         return datastore;
     }
