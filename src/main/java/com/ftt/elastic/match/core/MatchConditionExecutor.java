@@ -19,7 +19,7 @@ public class MatchConditionExecutor {
 
     //Match one to one
     public static Boolean match(ARecord aRecord, BRecord bRecord, List<MatchCondition> matchConditions) {
-        boolean matchStatus = false;
+        boolean matchStatus = true;
         for (MatchCondition matchCondition : matchConditions) {
 
             matchStatus = match(matchCondition, aRecord, bRecord);
@@ -54,7 +54,6 @@ public class MatchConditionExecutor {
     }
 
     private static boolean match(MatchCondition matchCondition, List<ARecord> aRecords, List<BRecord> bRecords) {
-
         List<String> values1 = aRecords.stream()
                 .map(aRecord -> (String) aRecord.getdBObject().get(matchCondition.getAttribute()))
                 .collect(Collectors.toList());

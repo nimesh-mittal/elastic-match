@@ -5,6 +5,7 @@
  */
 package com.ftt.elastic.match.engine;
 
+import com.ftt.elastic.match.ingest.CSVDataImporter;
 import com.ftt.elastic.match.startup.StartupSettings;
 import com.ftt.elastic.match.beans.MatchConfig;
 import com.ftt.elastic.match.db.MatchConfigDAO;
@@ -102,9 +103,9 @@ public class FileWatcher {
 
     private boolean importData(String directoryPath, String workingFilePath) throws BadConfigException {
         boolean importStatus = false;
-        CSVDataImportEngine cSVDataImportEngine = new CSVDataImportEngine(directoryPath);
+        CSVDataImporter dataImportEngine = new CSVDataImporter(directoryPath);
         try {
-            importStatus = cSVDataImportEngine.importFile(workingFilePath);
+            importStatus = dataImportEngine.importFile(workingFilePath);
         } catch (IOException | InstantiationException | IllegalAccessException ex) {
             Logger.error(ex, "error in data import");
         }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ftt.elastic.match.engine;
+package com.ftt.elastic.match.ingest;
 
 import com.ftt.elastic.match.beans.ARecord;
 import com.ftt.elastic.match.beans.BRecord;
@@ -34,14 +34,14 @@ import org.apache.commons.lang3.math.NumberUtils;
  *
  * @author nimeshagarwal
  */
-public class CSVDataImportEngine {
+public class CSVDataImporter {
 
     private List<String> keys;
     private String displayId;
     private String sideName;
     private String matchName;
 
-    public CSVDataImportEngine(String directoryPath) throws BadConfigException {
+    public CSVDataImporter(String directoryPath) throws BadConfigException {
         setMatchProperties(directoryPath);
     }
 
