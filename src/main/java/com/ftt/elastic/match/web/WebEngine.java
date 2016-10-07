@@ -40,7 +40,7 @@ public class WebEngine {
         tomcat.setPort(12273);
         tomcat.setBaseDir(PropertiesRepo.get(Constants.Settings.LOG_PATH) + "/working");
 
-        Context context = tomcat.addContext("/", new File("../ui/html/").getAbsolutePath());
+        Context context = tomcat.addContext("/", new File("./../ui/html/").getAbsolutePath());
         Logger.info("current working dir is {}", new File(PropertiesRepo.get(Constants.Settings.LOG_PATH) + "/working").getAbsoluteFile());
 
         tomcat.addServlet(context, "default", "org.apache.catalina.servlets.DefaultServlet");

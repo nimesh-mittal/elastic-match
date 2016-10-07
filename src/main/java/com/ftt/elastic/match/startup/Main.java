@@ -8,9 +8,12 @@ package com.ftt.elastic.match.startup;
 import com.ftt.elastic.match.engine.FileWatcher;
 import com.ftt.elastic.match.engine.MatchingEngine;
 import com.ftt.elastic.match.exception.BadConfigException;
+import com.ftt.elastic.match.core.Matcher;
 import com.ftt.elastic.match.utils.PropertiesRepo;
 import com.ftt.elastic.match.utils.SystemHealthUtils;
 import com.ftt.elastic.match.web.WebEngine;
+import java.net.MalformedURLException;
+import java.util.ServiceLoader;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -24,7 +27,7 @@ import org.apache.catalina.LifecycleException;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
 
         PropertiesRepo.load();
 

@@ -22,7 +22,7 @@ public class PropertiesRepo {
         InputStream input = null;
 
         try {
-            input = new FileInputStream("/opt/dev/apps/elastic/config/config.properties");
+            input = new FileInputStream("./../config/config.properties");
 
             // load a properties file
             prop.load(input);
