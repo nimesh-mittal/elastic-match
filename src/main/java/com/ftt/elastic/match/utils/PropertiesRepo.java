@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import org.pmw.tinylog.Logger;
 
 /**
  *
@@ -16,7 +17,7 @@ import java.util.Properties;
  */
 public class PropertiesRepo {
 
-    private static Properties prop = new Properties();
+    private static final Properties prop = new Properties();
 
     public static void load() {
         InputStream input = null;
@@ -26,6 +27,14 @@ public class PropertiesRepo {
 
             // load a properties file
             prop.load(input);
+            
+            //print loaded properties
+            Logger.info("listing configurations ...");
+            for(String proKey: prop.stringPropertyNames())
+            {
+                 Logger.info(proKey + " --> " + prop.getProperty(proKey));
+            }
+             Logger.info("listing configurations completed");
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
