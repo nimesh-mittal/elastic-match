@@ -1,4 +1,4 @@
-[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/19232250/57f35712-8efc-11e6-8341-10239b4f70b3.png)](http://elasticmatch.com/)
 
 ## A Generic Restful Match Engine
 
