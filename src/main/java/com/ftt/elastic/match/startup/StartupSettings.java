@@ -35,7 +35,7 @@ public class StartupSettings {
     private static void setupBatchLogConfig() {
         Configurator.defaultConfig()
                 .writer(new RollingFileWriter(PropertiesRepo.get(Constants.Settings.LOG_PATH) + File.separator + "data-import.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
-                .addWriter(new ConsoleWriter())
+                 //.addWriter(new ConsoleWriter())
                 .level(Level.valueOf(PropertiesRepo.get(Constants.Settings.LOG_LEVEL)))
                 .formatPattern(PropertiesRepo.get(Constants.Settings.LOG_PATTERN))
                 .activate();
@@ -44,7 +44,7 @@ public class StartupSettings {
     private static void setupEngineLogConfig() {
         Configurator.defaultConfig()
                 .writer(new RollingFileWriter(PropertiesRepo.get(Constants.Settings.LOG_PATH) + File.separator + "matching-engine.log", 10, new CountLabeler(), new SizePolicy(1024 * 1024 * 100)))
-                .addWriter(new ConsoleWriter())
+                 //.addWriter(new ConsoleWriter())
                 .level(Level.valueOf(PropertiesRepo.get(Constants.Settings.LOG_LEVEL)))
                 .formatPattern(PropertiesRepo.get(Constants.Settings.LOG_PATTERN))
                 .activate();
