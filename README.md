@@ -1,4 +1,4 @@
-[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985121/f7778c04-8713-11e6-9190-11505c8c596c.png)](http://elasticmatch.com/)
+[![N|Solid](https://cloud.githubusercontent.com/assets/10060860/19232352/db2b2b78-8efc-11e6-80ef-8d2205754383.png)](http://elasticmatch.com/)
 
 ## A Generic Restful Match Engine
 
@@ -47,7 +47,7 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 
 ### Installation
 
-* Download tar from [https://www.elasticmatch.com/downloads](http://elastic.site88.net/Download/) and unzip the Elasticmatch official distribution.
+* Download tar from [https://www.elasticmatch.com/downloads](http://elasticmatch.com/downloads/) and unzip the Elasticmatch official distribution.
 * Run ```bin/start.sh``` on unix, or ```bin\start.bat``` on windows.
 * Open browser and type ```http://localhost:12273/admin-ui/src/app/index.html```
 
