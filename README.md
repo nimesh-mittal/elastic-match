@@ -49,7 +49,7 @@ Elastic match is design to keep things simple yet powerful. It will take less th
 
 * Download tar from [https://www.elasticmatch.com/downloads](http://elasticmatch.com/downloads/) and unzip the Elasticmatch official distribution.
 * Run ```bin/start.sh``` on unix, or ```bin\start.bat``` on windows.
-* Open browser and type ```http://localhost:12273/admin-ui/src/app/index.html```
+* Open browser and type ```http://localhost:12273/match-ui/src/app/index.html```
 
 ### UI
 [![N|Solid](https://cloud.githubusercontent.com/assets/10060860/18985680/b2f22898-8716-11e6-9ac5-944173ba8366.png)](http://elasticmatch.com/)
