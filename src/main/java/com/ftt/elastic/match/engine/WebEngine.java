@@ -10,6 +10,7 @@ import com.ftt.elastic.match.startup.StartupSettings;
 import com.ftt.elastic.match.utils.Constants;
 import com.ftt.elastic.match.utils.PropertiesRepo;
 import com.ftt.elastic.match.utils.SystemHealthUtils;
+import com.ftt.elastic.match.web.IndexingResource;
 import com.ftt.elastic.match.web.MatchConfigRestResource;
 import com.ftt.elastic.match.web.MatchReportResource;
 import com.ftt.elastic.match.web.SystemHealthResource;
@@ -54,6 +55,7 @@ public class WebEngine {
         context.addServletMapping("/hello", "hello");
         context.addServletMapping("/rest/*", "jersey-rest-servlet");
         context.addServletMapping("/", "default");
+        context.addWelcomeFile("index.html");
 
         tomcat.start();
         SystemHealthUtils.create("Running", "web");
@@ -102,6 +104,7 @@ class ResourceLoader extends Application {
         classes.add(MatchReportResource.class);
         classes.add(JacksonJsonProvider.class);
         classes.add(SystemHealthResource.class);
+        classes.add(IndexingResource.class);
         return classes;
     }
 }
